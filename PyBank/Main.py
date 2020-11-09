@@ -12,7 +12,7 @@ high = 0
 low = 0
 month = []
 monthly_change = []
-amount = []
+monies = []
 change = []
 best_date = ""
 worst_date = ""
@@ -30,20 +30,23 @@ with open(csvpath) as csvfile:
 
         if count == 0:
             count += 1
-            newamount = int(row[1])
-            amount.append(int(row[1]))
+            newmoney = int(row[1])
+            monies.append(int(row[1]))
             month.append(str(row[0]))
 
         else:
-            amount.append(int(row[1]))
+            monies.append(int(row[1]))
             month.append(str(row[0]))
-            change.append(int(int(row[1])-newamount))
+            change.append(int(int(row[1])-newmoney))
             monthly_change.append(str(row[0]))
-            newamount = int(row[1])
+            newmoney = int(row[1])
 
+    # Find average change
     avg_change = round(sum(change) / len(monthly_change), 2)
+    # Find Greatest increase in profits and date
     high = max(change)
     best_date = change.index(high)
+    # Find Greatest Decrease in losses and date
     low = min(change)
     worst_date = change.index(low)
 
