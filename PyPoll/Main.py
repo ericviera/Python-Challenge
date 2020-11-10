@@ -3,8 +3,7 @@ import csv
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 csvpath = os.path.join('Resources', 'election_data.csv')
 
-
-total_votes = 0
+votes = 0
 
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
