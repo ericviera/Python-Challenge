@@ -25,6 +25,11 @@ with open(csvpath) as csvfile:
         elif row[2] == "O'Tooley":
             cand_4 += 1
 
+        Khan = round((cand_1/votes_total)*100, 3)
+        Correy = round((cand_2/votes_total)*100, 3)
+        Li = round((cand_3/votes_total)*100, 3)
+        OTooley = round((cand_4/votes_total)*100, 3)
+
         if cand_1 > cand_2 and cand_1 > cand_3 and cand_1 > cand_4:
             winner = "Khan"
         elif cand_2 > cand_1 and cand_2 > cand_3 and cand_2 > cand_4:
@@ -40,10 +45,10 @@ print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {votes_total}")
 print("-------------------------")
-print(f"Khan: {x}%" {(y)})
-print(f"Correy: {x}%" {(y)})
-print(f"Li: {x}%" {(y)})
-print(f"O'Tooley: {x}%" {(y)})
+print(f"Khan: {Khan}% ({cand_1})")
+print(f"Correy: {Correy}% ({cand_2})")
+print(f"Li: {Li}% ({cand_3})")
+print(f"O'Tooley: {OTooley}% ({cand_4})")
 print("-------------------------")
 print(f"winner: {winner}")
 print("-------------------------")
@@ -55,6 +60,10 @@ txtfile.write("Election Results\n")
 txtfile.write("-------------------------\n")
 txtfile.write(f"Total Votes: {votes_total}\n")
 txtfile.write("-------------------------\n")
+txtfile.write(f"Khan: {Khan}% ({cand_1})\n")
+txtfile.write(f"Correy: {Correy}% ({cand_2})\n")
+txtfile.write(f"Li: {Li}% ({cand_3})\n")
+txtfile.write(f"O'Tooley: {OTooley}% ({cand_4})\n")
 txtfile.write("-------------------------\n")
-#txtfile.write(f"winner: {winner}\n")
+txtfile.write(f"winner: {winner}\n")
 txtfile.write("-------------------------\n")
