@@ -50,12 +50,25 @@ with open(csvpath) as csvfile:
     low = min(change)
     worst_date = change.index(low)
 
+    print("---------------------------------")
+    print("Financial Analysis")
+    print("---------------------------------")
+    print(f"Total Months:  {total_months}")
+    print(f"Total:  ${net_prof_loss}")
+    print(f"Average Change:  ${avg_change}")
+    print(
+        f"Greatest Increase in Profits:  {monthly_change[best_date]} (${high})")
+    print(
+        f"Greatest Decrease in Losses:  {monthly_change[worst_date]} (${low})")
 
-print("---------------------------------")
-print("Financial Analysis")
-print("---------------------------------")
-print(f"Total Months:  {total_months}")
-print(f"Total:  ${net_prof_loss}")
-print(f"Average Change:  ${avg_change}")
-print(f"Greatest Increase in Profits:  {monthly_change[best_date]} (${high})")
-print(f"Greatest Decrease in Losses:  {monthly_change[worst_date]} (${low})")
+    txtfile = open("Financial_Analysis.txt", 'w')
+    txtfile.write("---------------------------------\n")
+    txtfile.write("Financial Analysis\n")
+    txtfile.write("---------------------------------\n")
+    txtfile.write(f"Total Months:  {total_months}\n")
+    txtfile.write(f"Total:  ${net_prof_loss}\n")
+    txtfile.write(f"Average Change:  ${avg_change}\n")
+    txtfile.write(
+        f"Greatest Increase in Profits:  {monthly_change[best_date]} (${high})\n")
+    txtfile.write(
+        f"Greatest Decrease in Losses:  {monthly_change[worst_date]} (${low})")
